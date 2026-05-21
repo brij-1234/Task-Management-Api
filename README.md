@@ -224,18 +224,6 @@ Request Body:
 
 **DELETE** `/api/tasks/{id}`
 
-
-### Task Listing Features
-
-- Pagination
-- Filter by status
-
-Example:
-
-```text
-/api/tasks?status=pending&page=1
-```
-
 ---
 
 ## Validation Rules
