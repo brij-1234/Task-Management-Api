@@ -146,7 +146,7 @@ Request Body:
 
 ```json
 {
-  "email": "brij@gmail.com",
+  "email": "brij.kishore@gmail.com",
   "password": "password123"
 }
 ```
