@@ -228,7 +228,7 @@ Request Body:
 
 ## Validation Rules
 
-### Registration
+### Registration Fields
 
 #### Name
 - Required
