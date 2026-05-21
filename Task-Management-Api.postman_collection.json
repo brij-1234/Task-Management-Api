@@ -1,0 +1,390 @@
+{
+  "info": {
+    "_postman_id": "33b816c2-7667-470b-a4ef-1f5f81bc736e",
+    "name": "Task-Management-Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1764528"
+  },
+  "item": [
+    {
+      "name": "Registration",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "ravi",
+              "type": "text",
+              "uuid": "2f8d29e9-fa05-4056-94b4-9ab2dcbd81e3"
+            },
+            {
+              "key": "email",
+              "value": "ravi@gmail.com",
+              "type": "text",
+              "uuid": "53e5d125-ec00-4c55-83ba-781dda937d0c"
+            },
+            {
+              "key": "password",
+              "value": "some1thing",
+              "type": "text",
+              "uuid": "2526fd0a-f118-40b6-add9-7a64d731d791"
+            },
+            {
+              "key": "password_confirmation",
+              "value": "some1thing",
+              "type": "text",
+              "uuid": "5e8c812d-6632-402e-b831-da1175b1faf4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "nive@gmail.com",
+              "type": "text",
+              "uuid": "6f79a1b9-645b-45d3-870f-664a99265306"
+            },
+            {
+              "key": "password",
+              "value": "something",
+              "type": "text",
+              "uuid": "68feb0e1-f458-4ee7-aead-bf7c6d23512a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Store Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "34|Y2nAPyxmR0JkmQBVdIEMVIorFiZfZhuaCE23sMIzf62dcefc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "aaaa",
+              "type": "text",
+              "uuid": "fb1e2e51-2f93-4c65-90af-fd16d26f2251"
+            },
+            {
+              "key": "description",
+              "value": "aaaadescription",
+              "type": "text",
+              "uuid": "e096eb74-1d4e-419f-a824-f8b08f0bc02c"
+            },
+            {
+              "key": "status",
+              "value": "in_progress",
+              "type": "text",
+              "uuid": "a5f1bbe2-e9d4-4edf-8e2f-b9022865cade"
+            },
+            {
+              "key": "priority",
+              "value": "low",
+              "type": "text",
+              "uuid": "81b4b906-dc62-4d1d-ac2f-31c69c7df700"
+            },
+            {
+              "key": "due_date",
+              "value": "2026-06-20",
+              "type": "text",
+              "uuid": "1a6a6dad-2554-4b02-b3bf-9858c1d45fb0"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "28|NB1WweiL6WtoEAKFBCfOCMbFsRblmuIaTj1uR6sH787fde5f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\" : \"KKK ss\",\r\n    \"description\": \"KKK kapoor description\",\r\n    \"status\":\"in_progress\",\r\n    \"priority\":\"low\",\r\n    \"due_date\":\"2026-06-20\" \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks/19",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks",
+            "19"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Task List",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "28|NB1WweiL6WtoEAKFBCfOCMbFsRblmuIaTj1uR6sH787fde5f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks?status=in_progress",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "in_progress"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "28|NB1WweiL6WtoEAKFBCfOCMbFsRblmuIaTj1uR6sH787fde5f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks/19",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks",
+            "19"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "22|wQgqTlXbF4IPf3MHQg8BixDddNTqupyGtwPi9aDZf3de231c",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Nive",
+              "type": "text",
+              "uuid": "2f8d29e9-fa05-4056-94b4-9ab2dcbd81e3"
+            },
+            {
+              "key": "email",
+              "value": "nive@gmail.com",
+              "type": "text",
+              "uuid": "53e5d125-ec00-4c55-83ba-781dda937d0c"
+            },
+            {
+              "key": "password",
+              "value": "something",
+              "type": "text",
+              "uuid": "2526fd0a-f118-40b6-add9-7a64d731d791"
+            },
+            {
+              "key": "password_confirmation",
+              "value": "something",
+              "type": "text",
+              "uuid": "5e8c812d-6632-402e-b831-da1175b1faf4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/logout",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
