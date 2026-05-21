@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Helpers\ApiResponse;
+use App\Http\Resources\UserResource;
 
 class AuthController extends Controller
 {
@@ -29,7 +30,7 @@ class AuthController extends Controller
 
             return ApiResponse::success('User registered successfully', [
                 'access_token' => $token,
-                'user' => $user,
+                'user' => new UserResource($user),
             ], 201);
         } catch (\Exception $e){
             return ApiResponse::error('Failed to register user', $e->getMessage(), 500);
@@ -51,7 +52,7 @@ class AuthController extends Controller
 
             return ApiResponse::success('Login successful', [
                 'token' => $token,
-                'user' => $user,
+                'user' => new UserResource($user),
             ], 200);
         } catch( \Exception $e){
             return ApiResponse::error('Failed to login', $e->getMessage(), 500);

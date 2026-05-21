@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use Illuminate\Http\JsonResponse;
 use App\Helpers\ApiResponse;
+use App\Http\Resources\TaskResource;
 
 class TaskController extends Controller
 {
@@ -23,6 +24,11 @@ class TaskController extends Controller
                 $query->where('status', $request->status);
             }
             $tasks = $query->latest()->paginate(2);
+
+            $tasks->setCollection(
+                TaskResource::collection($tasks->getCollection())
+                    ->collection
+            );
 
             return ApiResponse::success('Tasks list', $tasks);
         } catch (\Exception $e){
@@ -40,7 +46,7 @@ class TaskController extends Controller
                 ...$request->validated(),
                 'user_id' => auth()->id()
             ]);
-
+            
             return ApiResponse::success('Task created successfully', null, 201);
         } catch (\Exception $e) {
             return ApiResponse::error('Failed to create task', $e->getMessage(), 500);
@@ -72,7 +78,7 @@ class TaskController extends Controller
 
             $task->update($request->validated());
             $task->refresh();
-            return ApiResponse::success('Task updated successfully', $task);
+            return ApiResponse::success('Task updated successfully', new TaskResource($task));
             } catch (\Exception $e){
                 return ApiResponse::error('Failed to update task', $e->getMessage(), 500);
             }
