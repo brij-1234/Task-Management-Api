@@ -130,7 +130,7 @@ Request Body:
 ```json
 {
   "name": "Brij Kishore",
-  "email": "brij.kishor@gmail.com",
+  "email": "brij.kishore@gmail.com",
   "password": "password123",
   "password_confirmation": "password123"
 }
